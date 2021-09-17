@@ -32,11 +32,9 @@ calcButton.addEventListener("click", async () => {
 
         const result = await fetch('/getWeather')
         const fData = await result.json()
-        document.getElementById('date').innerHTML = `Date : ${newDate} `;
-        document.getElementById('temp').innerHTML = `temp: ${temp}`;
-        document.getElementById('content').innerHTML = `i feel : ${feeling}`;
-
-
+        document.getElementById('date').innerHTML = `Date : ${fData.date}`;
+        document.getElementById('temp').innerHTML = `Temperature : ${ fData.temp}`;
+        document.getElementById('content').innerHTML = `I feel : ${fData.feeling}`;
 
     } catch (err) {
         console.log(err);
